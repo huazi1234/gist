@@ -1,0 +1,6 @@
+	HANDLE m_hMutex = CreateMutex(NULL, TRUE, this->m_pszAppName);
+	if (GetLastError() == ERROR_ALREADY_EXISTS)
+	{
+		AfxMessageBox(_T("已存在一个实例!"));
+		return FALSE;
+	}
